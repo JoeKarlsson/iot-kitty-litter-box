@@ -1,0 +1,19 @@
+{
+  "name": "iot-kitty-litter-box",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joe <joekarlsson1@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "johnny-five": "^1.3.0",
+    "nodemon": "^1.19.2",
+    "raspi-io": "^10.0.2",
+    "serialport": "^7.1.5"
+  }
+}
