@@ -1,4 +1,4 @@
-# Contributing to bechel.io
+# Contributing to IoT Kitty Litter Box
 
 Please take a moment to review this document in order to make the contribution
 process easy and effective for everyone involved.
@@ -8,11 +8,11 @@ the developers managing and developing this open source project. In return,
 they should reciprocate that respect in addressing your issue, assessing
 changes, and helping you finalize your pull requests.
 
-As for everything else in the project, the contributions to bechel.io are governed by our [Code of Conduct](https://github.com/JoeKarlsson/bechdel-test/blob/develop/CODE_OF_CONDUCT.md).
+As for everything else in the project, the contributions to IoT Kitty Litter Box are governed by our [Code of Conduct](https://github.com/JoeKarlsson/iot-kitty-litter-box/blob/develop/CODE_OF_CONDUCT.md).
 
 ## Using the issue tracker
 
-First things first: **Do NOT report security vulnerabilities in public issues!** Please disclose responsibly by letting [the bechel.io team](mailto:joekarlsson1@gmail.com?subject=Security) know upfront. We will assess the issue as soon as possible on a best-effort basis and will give you an estimate for when we have a fix and release available for an eventual public disclosure.
+First things first: **Do NOT report security vulnerabilities in public issues!** Please disclose responsibly by letting [the IoT Kitty Litter Box team](mailto:joekarlsson1@gmail.com?subject=Security) know upfront. We will assess the issue as soon as possible on a best-effort basis and will give you an estimate for when we have a fix and release available for an eventual public disclosure.
 
 The issue tracker is the preferred channel for [bug reports](#bugs),
 [features requests](#features) and [submitting pull
@@ -126,7 +126,7 @@ on how to send one :)
 7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/)
    with a clear title and description.
 
-### For Members of the bechel.io Contributors Team
+### For Members of the IoT Kitty Litter Box Contributors Team
 
 1. Clone the repo and create a branch
 
@@ -188,7 +188,7 @@ same license as that used by the project.
 ## Triagers
 
 There is a [defined process](docs/developers/TRIAGING.md) to manage issues, because this helps to speed up releases and minimizes user pain.
-Triaging is a great way to contribute to bechel.io without having to write code.
+Triaging is a great way to contribute to IoT Kitty Litter Box without having to write code.
 If you are interested, please [leave a comment here](https://github.com/hoodiehq/discussion/issues/50) asking to join the triaging team.
 
 ## Maintainers

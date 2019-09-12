@@ -60,8 +60,6 @@ Start up Docker, and you should now be ready to spin up a development build of y
 
 Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Slow Way - Setup Your Project Locally
-
 ### Pre-reqs
 
 * Install [Node.js](https://nodejs.org/en/)
@@ -77,7 +75,6 @@ Download and unpack [Bechdel Test](https://github.com/JoeKarlsson1/bechdel-test)
 Next, inside the project, you need to install the project's various NPM dependencies:
 
     npm install
-
 
 Quit out of the mongo shell, and you should now be ready to spin up a development build of your new project:
 
