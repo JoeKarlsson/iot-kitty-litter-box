@@ -3,7 +3,8 @@
 
 </p>
 <h1 align="center">IoT Kitty Litter Box</h1></h1>
-<h3 align="center">Welcome to to world of IoT (Internet of Toilets 🚽). This is the code you will need to setup your very own internet connect kitty litter box!😻</h3>
+<h2 align="center">Welcome to to world of IoT (Internet of Toilets 🚽).</h2>
+<h3 align="center">This is the code you will need to setup your very own internet connect kitty litter box!😻</h3>
 
 [![deps][deps]][deps-url]
 [![Maintainability][maintainability]][maintainability-url]
