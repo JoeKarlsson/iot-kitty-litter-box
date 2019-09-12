@@ -1,7 +1,7 @@
 {
   "name": "iot-kitty-litter-box",
   "version": "1.0.0",
-  "description": "",
+  "description": "Welcome to to world of IoT (Internet of Toilets 🚽). This is the code you will need to setup your very own internet connect kitty litter box!",
   "main": "app.js",
   "scripts": {
     "start": "sudo node app.js",
