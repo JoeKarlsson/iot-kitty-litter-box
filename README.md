@@ -6,8 +6,6 @@
 <h3 align="center">Welcome to to world of IoT (Internet of Toilets 🚽). This is the code you will need to setup your very own internet connect kitty litter box!😻</h3>
 
 [![deps][deps]][deps-url]
-[![Coverage Status][cover]][cover-url]
-[![Build Status][tests]][tests-url]
 [![Maintainability][maintainability]][maintainability-url]
 [![stars][stars]][stars-url]
 [![pr][pr]][pr-url]
@@ -72,13 +70,12 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 
 Download and unpack [Bechdel Test](https://github.com/JoeKarlsson1/bechdel-test). Or alternatively checkout from source:
 
-    git clone https://github.com/JoeKarlsson/bechdel-test
-    cd bechdel-test
+    git clone https://github.com/JoeKarlsson/iot-kitty-litter-box.git
+    cd iot-kitty-litter-box
 
 Next, inside the project, you need to install the project's various NPM dependencies:
 
     npm install
-
 
 
 Quit out of the mongo shell, and you should now be ready to spin up a development build of your new project:
@@ -127,14 +124,10 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/iot-kitty-litter-bo
 
 [deps]: https://david-dm.org/JoeKarlsson/iot-kitty-litter-box/status.svg
 [deps-url]: https://david-dm.org/JoeKarlsson/iot-kitty-litter-box
-[tests]: https://travis-ci.org/JoeKarlsson/iot-kitty-litter-box.svg?branch=develop
-[tests-url]: https://travis-ci.org/JoeKarlsson/iot-kitty-litter-box
-[maintainability]: https://api.codeclimate.com/v1/badges/7d2a095c01bb88557a41/maintainability
+[maintainability]: https://api.codeclimate.com/v1/badges/99092720d0089153661f/maintainability
 [maintainability-url]: https://codeclimate.com/github/JoeKarlsson/iot-kitty-litter-box/maintainability
 [pr]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
 [pr-url]: CONTRIBUTING.md
-[cover]: https://coveralls.io/repos/github/JoeKarlsson/iot-kitty-litter-box/badge.svg?branch=develop
-[cover-url]: https://coveralls.io/github/JoeKarlsson/iot-kitty-litter-box?branch=develop
 [stars]: https://img.shields.io/github/stars/JoeKarlsson/iot-kitty-litter-box.svg?style=flat-square
 [stars-url]: https://github.com/JoeKarlsson/iot-kitty-litter-box/stargazers
 [license]: https://img.shields.io/github/license/JoeKarlsson/iot-kitty-litter-box.svg
