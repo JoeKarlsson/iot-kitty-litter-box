@@ -29,14 +29,13 @@ In this demo, we will be getting our hands dirty the Raspberry Pi and Nodejs. We
 - 2 x Female to male wires
 - 1 x 3D printer [Optional] It was used for printing the case where the electronics are encloused.
 - 1 x PLA filament [Optional] of any color you want.
-- 1 x Solder iron and wire. The HX711 doesn't come with soldered terminals. I needed to solder some wires or pins in order to connect those devices.
-- 1 x Screwdriver. The structure is mounted using some screws. A set of screwdrivers was used.
-- 8 x M2x6mm Bolts. They were used for mounting the electronics inside the case.
-- HX711 module This works as a load cell amplifier. Four strain gauge load cells are connected to this module, and it communicates on a serial communication with the microcontroller and performs the conversion of the analog signal to digital, delivering the converted signal to the microcontroller.
+- 1 x Solder iron and wire.
+- 1 x Screwdriver.
+- 8 x M2x6mm Bolts.
+- HX711 module This works as a load cell amplifier.
 - 4 x 50kg load cell (x4). They are used to measure the weight. Four of them were used for a maximum weight of 200kg.
-- 1 x Magnetic door sensor (link / link / link). It consists in a magnectic switch, which was used to detect that the litter box is opened.
+- 1 x Magnetic door sensor. Used to detect that the litter box is opened.
 - 1 x Micro USB cable.
-- 6 x female-female jumper wires.
 - 1 x Cat litter box.
 
 ## Schematics
