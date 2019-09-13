@@ -1,7 +1,8 @@
 <p align="center">
-	<img width=100% src="https://user-images.githubusercontent.com/4650739/34265870-eb4dc20c-e63c-11e7-8188-a4096ef24153.jpeg" />
+	<img width=100% src="https://user-images.githubusercontent.com/4650739/64831323-d6fb8b00-d59a-11e9-99ef-3ff40a5a70b1.png" />
 
 </p>
+
 <h1 align="center">IoT Kitty Litter Box</h1></h1>
 <h2 align="center">Welcome to to world of IoT (Internet of Toilets 🚽).</h2>
 <h3 align="center">This is the code you will need to setup your very own internet connect kitty litter box!😻</h3>
