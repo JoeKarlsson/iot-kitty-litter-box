@@ -2,7 +2,7 @@ const { RaspiIO } = require('raspi-io');
 const five = require('johnny-five');
 const app = require('express')();
 const http = require('http').Server(app);
-const calibrate = require("./helper/calibrate.js");
+const { avgWeight, currWeight } = require("./helper/getCurrWeight.js");
 
 let state = {
   isMaintenenceMode: false,
@@ -23,7 +23,7 @@ board.on('ready', () => {
   spdt.on('close', () => {
     console.log('close');
     state.isMaintenenceMode = false;
-
+    
   });
 });
 
