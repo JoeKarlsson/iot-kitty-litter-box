@@ -1,22 +1,12 @@
 const { RaspiIO } = require('raspi-io');
 const five = require('johnny-five');
-const express = require('express');
-const bodyParser = require('body-parser');
-
-const app = express();
+const app = require('express')();
 const http = require('http').Server(app);
+const calibrate = require("./helper/calibrate.js");
 
-app.use(bodyParser.json());
-
-app.post('/', (req, res) => {
-  const { value } = req.body;
-  console.log(`python: ${value}`);
-  res.json({ success: true });
-});
-
-http.listen(3000, () => {
-  console.log('listening...');
-});
+let state = {
+  isMaintenenceMode: false,
+};
 
 const board = new five.Board({
   io: new RaspiIO(),
@@ -27,9 +17,16 @@ board.on('ready', () => {
 
   spdt.on('open', () => {
     console.log('open');
+    state.isMaintenenceMode = true;
   });
 
   spdt.on('close', () => {
     console.log('close');
+    state.isMaintenenceMode = false;
+
   });
+});
+
+http.listen(3000, () => {
+  console.log('listening...');
 });

@@ -23,8 +23,10 @@
 	],
 	"main": "app.js",
 	"scripts": {
-		"start": "sudo node app.js",
-		"start:dev": "sudo nodemon app.js",
+		"start": "sudo node src/app.js",
+		"start:dev": "sudo nodemon src/app.js",
+		"stop:node": "killall -s KILL node",
+		"stop:python": "sudo killall -s KILL python",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "eslint src && npm run lint:md",
 		"lint:fix": "eslint src --fix",
@@ -45,7 +47,6 @@
 		"eslint": "^6.3.0",
 		"eslint-config-airbnb-base": "^14.0.0",
 		"eslint-plugin-import": "^2.18.2",
-		"nodemon": "^1.19.2",
 		"prettier": "^1.18.2",
 		"remark": "^11.0.1"
 	}
