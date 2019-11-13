@@ -2,31 +2,46 @@ const { RaspiIO } = require('raspi-io');
 const five = require('johnny-five');
 const app = require('express')();
 const http = require('http').Server(app);
-const { avgWeight, currWeight } = require("./helper/getCurrWeight.js");
+const MongoClient = require('mongodb').MongoClient;
+const { avgWeight, currWeight } = require('./helper/getCurrWeight.js');
+const { db } = require('./config.json');
+
+console.log(process.env.uri);
+const client = new MongoClient(process.env.uri, { useNewUrlParser: true });
 
 let state = {
-  isMaintenenceMode: false,
+	isMaintenenceMode: false,
 };
 
 const board = new five.Board({
-  io: new RaspiIO(),
+	io: new RaspiIO(),
 });
 
 board.on('ready', () => {
-  const spdt = new five.Switch('GPIO16');
+	client.connect(err => {
+		const collection = client.db(db.name).collection(db.collection);
 
-  spdt.on('open', () => {
-    console.log('open');
-    state.isMaintenenceMode = true;
-  });
+		// perform actions on the collection object
+		const spdt = new five.Switch('GPIO16');
 
-  spdt.on('close', () => {
-    console.log('close');
-    state.isMaintenenceMode = false;
-    
-  });
+		spdt.on('open', () => {
+			console.log('open');
+			state.isMaintenenceMode = true;
+		});
+
+		spdt.on('close', () => {
+			console.log('close');
+			state.isMaintenenceMode = false;
+		});
+		client.close();
+	});
 });
 
-http.listen(3000, () => {
-  console.log('listening...');
+const port = 3000;
+
+http.listen(port, () => {
+	console.log(
+		`==> 🌎 Listening on port ${port}. ` +
+			`Open up http://localhost:${port}/ in your browser.`
+	);
 });
