@@ -73,7 +73,7 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 
 1. Sign up for [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). We will be using MongoDB Atlas to save all of our IoT Sensor data.
 
-   1. More information about getting started with MongoDB Atlas can be found here: [https://docs.atlas.mongodb.com/getting-started/](https://docs.atlas.mongodb.com/getting-started/)
+   - More information about getting started with MongoDB Atlas can be found here: [https://docs.atlas.mongodb.com/getting-started/](https://docs.atlas.mongodb.com/getting-started/)
 
 1. Download and unpack [IoT Kitty Litter Box](https://github.com/JoeKarlsson/iot-kitty-litter-box.git). Or alternatively checkout from source:
 
@@ -82,7 +82,9 @@ git clone https://github.com/JoeKarlsson/iot-kitty-litter-box.git
 cd iot-kitty-litter-box
 ```
 
-1. Rename `.env_example` to `.env` and add your MongoDB Atlas URI connection string. Additional information on how to get this can be found here: [https://docs.atlas.mongodb.com/driver-connection/](https://docs.atlas.mongodb.com/driver-connection/).
+1. Rename `.env_example` to `.env` and add your MongoDB Atlas URI connection string.
+
+- Additional information on how to get this can be found here: [https://docs.atlas.mongodb.com/driver-connection/](https://docs.atlas.mongodb.com/driver-connection/).
 
 1. Run `source .env`
 
