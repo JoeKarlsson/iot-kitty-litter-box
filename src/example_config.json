@@ -3,6 +3,5 @@
 	"cat": {
 		"name": "BMO",
 		"weight": "200"
-	},
-	"uri": "ENTER YOUR MONGODB URI HERE"
+	}
 }
