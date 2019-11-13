@@ -71,22 +71,22 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Setup Your Project
 
-* Sign up for [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). We will be using MongoDB Atlas to save all of our IoT Sensor data.
+- Sign up for [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). We will be using MongoDB Atlas to save all of our IoT Sensor data.
 
-   - More information about getting started with MongoDB Atlas can be found here: [https://docs.atlas.mongodb.com/getting-started/](https://docs.atlas.mongodb.com/getting-started/)
+  - More information about getting started with MongoDB Atlas can be found here: [https://docs.atlas.mongodb.com/getting-started/](https://docs.atlas.mongodb.com/getting-started/)
 
-* Download and unpack [IoT Kitty Litter Box](https://github.com/JoeKarlsson/iot-kitty-litter-box.git). Or alternatively checkout from source:
+- Download and unpack [IoT Kitty Litter Box](https://github.com/JoeKarlsson/iot-kitty-litter-box.git). Or alternatively checkout from source:
 
 ```bash
 git clone https://github.com/JoeKarlsson/iot-kitty-litter-box.git
 cd iot-kitty-litter-box
 ```
 
-* Rename `.env_example` to `.env` and add your MongoDB Atlas URI connection string.
+- Rename `.env_example` to `.env` and add your MongoDB Atlas URI connection string.
 
-   - Additional information on how to get this can be found here: [https://docs.atlas.mongodb.com/driver-connection/](https://docs.atlas.mongodb.com/driver-connection/).
+  - Additional information on how to get this can be found here: [https://docs.atlas.mongodb.com/driver-connection/](https://docs.atlas.mongodb.com/driver-connection/).
 
-* Run `source .env`
+- Run `source .env`
 
 * Next, inside the project, you need to install the project's various NPM dependencies:
 
@@ -94,13 +94,13 @@ cd iot-kitty-litter-box
 npm install
 ```
 
-* Quit out of the mongo shell, and you should now be ready to spin up a development build of your new project:
+- Quit out of the mongo shell, and you should now be ready to spin up a development build of your new project:
 
 ```bash
 npm start
 ```
 
-* Navigate to [http://localhost:3000](http://localhost:3000)
+- Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Contributing
 

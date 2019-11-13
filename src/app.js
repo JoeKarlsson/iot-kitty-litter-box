@@ -1,13 +1,21 @@
+const path = require('path');
 const { RaspiIO } = require('raspi-io');
 const five = require('johnny-five');
-const app = require('express')();
-const http = require('http').Server(app);
+const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
-const { avgWeight, currWeight } = require('./helper/getCurrWeight.js');
-const { db } = require('./config.json');
+const { db, uri } = require('./config.json');
+const { currWeight } = require('./helper/getCurrWeight.js');
 
-console.log(process.env.uri);
-const client = new MongoClient(process.env.uri, { useNewUrlParser: true });
+const app = express();
+
+const isDeveloping = process.env.NODE_ENV !== 'production';
+const PORT = isDeveloping ? 3000 : process.env.PORT;
+const HOST = isDeveloping ? 'localhost' : '0.0.0.0';
+
+const PUBLIC_PATH = path.resolve('./public');
+app.use(express.static(PUBLIC_PATH));
+
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
 let state = {
 	isMaintenenceMode: false,
@@ -37,11 +45,14 @@ board.on('ready', () => {
 	});
 });
 
-const port = 3000;
-
-http.listen(port, () => {
-	console.log(
-		`==> 🌎 Listening on port ${port}. ` +
-			`Open up http://localhost:${port}/ in your browser.`
+const onStart = err => {
+	if (err) {
+		throw new Error(err);
+	}
+	console.info(
+		`==> 🌎 Listening on port ${PORT}. ` +
+			`Open up http://${HOST}:${PORT}/ in your browser.`
 	);
-});
+};
+
+app.listen(PORT, HOST, onStart);

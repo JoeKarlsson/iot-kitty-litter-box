@@ -7,5 +7,6 @@
 	"db": {
 		"name": "iot-kitty-litter-box",
 		"collection": "litter-box-time-series"
-	}
+	},
+	"uri": "mongodb+srv://joekarlsson:tBsF5pX5QLVtA0Fd@iot-kitty-litter-box-ff17n.mongodb.net/iot-kitty-litter-box?retryWrites=true&w=majority"
 }
