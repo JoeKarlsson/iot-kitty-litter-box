@@ -1,10 +1,11 @@
 const spawn = require('child_process').spawn;
 const handleError = require('./handleError.js');
-const { cat, db } = require('../config.json');
+const { insertTimeSeriesData } = require('./dbHelper.js');
+const { cat } = require('../config.json');
 
 class Scale {
 	constructor(client) {
-		this.collection = client.db(db.name).collection(db.collection);
+		this.client = client;
 		this.process = spawn('python', ['./hx711py/scale.py'], { detached: true });
 
 		this.baseBoxWeight = null;
@@ -34,6 +35,7 @@ class Scale {
 				this.recentsWeights
 			);
 			console.log('this.avgWeight :', this.avgWeight);
+			insertTimeSeriesData(this.avgWeight, this.client);
 
 			if (this.isCatPresent(this.avgWeight, this.baseBoxWeight)) {
 				this.handleCatInBoxEvent();
@@ -53,7 +55,7 @@ class Scale {
 
 	calculateArrAvg(arr) {
 		if (arr.length) {
-			const sum = arr.reduce(function(a, b) {
+			const sum = arr.reduce((a, b) => {
 				return a + b;
 			}, 0);
 			const avg = sum / arr.length;

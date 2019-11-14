@@ -5,6 +5,7 @@ const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const { uri } = require('./config.json');
 const { Scale } = require('./helper/getCurrWeight.js');
+const handleError = require('./helper/handleError.js');
 
 const app = express();
 
@@ -15,7 +16,15 @@ const HOST = isDeveloping ? 'localhost' : '0.0.0.0';
 const PUBLIC_PATH = path.resolve('./public');
 app.use(express.static(PUBLIC_PATH));
 
-const client = new MongoClient(uri, { useNewUrlParser: true });
+const OPTIONS = {
+	poolSize: 20,
+	socketTimeoutMS: 480000,
+	keepAlive: 300000,
+	ssl: true,
+	sslValidate: false,
+};
+
+const client = new MongoClient(uri, OPTIONS);
 
 let state = {
 	isMaintenenceMode: false,
@@ -27,6 +36,10 @@ const board = new five.Board({
 
 board.on('ready', () => {
 	client.connect(err => {
+		if (err) {
+			handleError(err);
+		}
+
 		const scale = new Scale(client);
 
 		// perform actions on the collection object
@@ -41,13 +54,16 @@ board.on('ready', () => {
 			console.log('close');
 			state.isMaintenenceMode = false;
 		});
-		client.close();
 	});
+});
+
+board.on('fail', error => {
+	handleError(error);
 });
 
 const onStart = err => {
 	if (err) {
-		throw new Error(err);
+		handleError(err);
 	}
 	console.info(
 		`==> 🌎 Listening on port ${PORT}. ` +
