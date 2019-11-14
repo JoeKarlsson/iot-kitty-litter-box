@@ -3,8 +3,8 @@ const { RaspiIO } = require('raspi-io');
 const five = require('johnny-five');
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
-const { db, uri } = require('./config.json');
-const { currWeight } = require('./helper/getCurrWeight.js');
+const { uri } = require('./config.json');
+const { Scale } = require('./helper/getCurrWeight.js');
 
 const app = express();
 
@@ -27,7 +27,7 @@ const board = new five.Board({
 
 board.on('ready', () => {
 	client.connect(err => {
-		const collection = client.db(db.name).collection(db.collection);
+		const scale = new Scale(client);
 
 		// perform actions on the collection object
 		const spdt = new five.Switch('GPIO16');
