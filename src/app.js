@@ -4,7 +4,7 @@ const five = require('johnny-five');
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
 const { uri } = require('./config.json');
-const { Scale } = require('./helper/getCurrWeight.js');
+const Scale = require('./helper/Scale.js');
 const handleError = require('./helper/handleError.js');
 
 const app = express();
@@ -26,10 +26,6 @@ const OPTIONS = {
 
 const client = new MongoClient(uri, OPTIONS);
 
-let state = {
-	isMaintenenceMode: false,
-};
-
 const board = new five.Board({
 	io: new RaspiIO(),
 });
@@ -40,6 +36,8 @@ board.on('ready', () => {
 			handleError(err);
 		}
 
+		console.log('==> 🌎 Connected correctly to MongoDB Atlas');
+
 		const scale = new Scale(client);
 
 		// perform actions on the collection object
@@ -47,12 +45,14 @@ board.on('ready', () => {
 
 		spdt.on('open', () => {
 			console.log('open');
-			state.isMaintenenceMode = true;
 		});
 
 		spdt.on('close', () => {
 			console.log('close');
-			state.isMaintenenceMode = false;
+			//When the box has been closed again, wait 1 min for the box to settle and recalibrate a new base weight
+			setTimeout(function() {
+				scale.calibrate();
+			}, 60000);
 		});
 	});
 });

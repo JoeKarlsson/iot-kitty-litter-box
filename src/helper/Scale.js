@@ -1,20 +1,20 @@
 const spawn = require('child_process').spawn;
 const handleError = require('./handleError.js');
-const { insertTimeSeriesData } = require('./dbHelper.js');
+const insertTimeSeriesData = require('./dbHelper.js');
 const { cat } = require('../config.json');
 
 class Scale {
 	constructor(client) {
 		this.client = client;
-		this.process = spawn('python', ['./hx711py/scale.py'], { detached: true });
-
 		this.baseBoxWeight = null;
 		this.bufferWeight = 50;
-
 		this.currWeight = 0;
 		this.avgWeight = 0;
 		this.recentsWeights = [];
 
+		this.process = spawn('python', ['./hx711py/scale.py'], {
+			detached: true,
+		});
 		this.getWeight();
 	}
 
@@ -34,8 +34,6 @@ class Scale {
 				this.currWeight,
 				this.recentsWeights
 			);
-			console.log('this.avgWeight :', this.avgWeight);
-			insertTimeSeriesData(this.avgWeight, this.client);
 
 			if (this.isCatPresent(this.avgWeight, this.baseBoxWeight)) {
 				this.handleCatInBoxEvent();
@@ -86,9 +84,18 @@ class Scale {
 		return false;
 	}
 
-	handleCatInBoxEvent() {}
+	calcCatsWeight(avgCatWeight, baseBoxWeight) {
+		return avgCatWeight - baseBoxWeight;
+	}
+
+	handleCatInBoxEvent() {
+		console.info('Cat has entered the box');
+		// wait n seconds to wait for the cat to settle before taking the weight and logging it in the DB
+		setTimeout(() => {
+			const catsWeight = this.calcCatsWeight();
+			insertTimeSeriesData(catsWeight, this.client);
+		}, 100);
+	}
 }
 
-module.exports = {
-	Scale,
-};
+module.exports = Scale;
