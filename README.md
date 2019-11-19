@@ -49,38 +49,16 @@ In this demo, we will be getting our hands dirty the Raspberry Pi and Nodejs. We
 
 ## Setup Your Project
 
-Download and unpack [Bechdel Test](https://github.com/JoeKarlsson1/bechdel-test). Or alternatively checkout from source:
+Download and unpack [IoT Kitty Litter Box](https://github.com/JoeKarlsson1/iot-kitty-litter-box). Or alternatively checkout from source:
 
-    git clone https://github.com/JoeKarlsson/bechdel-test
+    git clone https://github.com/JoeKarlsson/iot-kitty-litter-box
     cd bechdel-test
 
 Next, inside the project, you need to install the project's various NPM dependencies:
 
     npm install
 
-Start up Docker, and you should now be ready to spin up a development build of your new project:
-
-    npm run start:docker
-
-Navigate to [http://localhost:3000](http://localhost:3000)
-
-### Pre-reqs
-
-- Install [Node.js](https://nodejs.org/en/)
-- Install [MongoDB](https://docs.mongodb.com/manual/installation/) (Create a new database called `bechdelTest` in MongoDD.)
-
-## Setup Your Project
-
-Download and unpack [Bechdel Test](https://github.com/JoeKarlsson1/bechdel-test). Or alternatively checkout from source:
-
-    git clone https://github.com/JoeKarlsson/iot-kitty-litter-box.git
-    cd iot-kitty-litter-box
-
-Next, inside the project, you need to install the project's various NPM dependencies:
-
-    npm install
-
-Quit out of the mongo shell, and you should now be ready to spin up a development build of your new project:
+Now, fire it up!
 
     npm start
 
@@ -93,10 +71,10 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/iot-kitty-litter-bo
 ### Contributing TLDR;
 
 1. Fork it!
-1. Create your feature branch: `git checkout -b my-new-feature`
-1. Commit your changes: `git commit -am 'Add some feature'`
-1. Push to the branch: `git push origin my-new-feature`
-1. Submit a pull request :D
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 
 ### Maintainers
 
