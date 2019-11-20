@@ -60,11 +60,14 @@ Next, inside the project, you need to install the project's various NPM dependen
 
     npm install
 
-Now, fire it up!
+You should now be ready to spin up a development build of your new project:
 
-    npm start
+```bash
+npm start
+```
 
 Navigate to [http://localhost:3000](http://localhost:3000)
+
 
 ## Contributing
 

@@ -1,0 +1,12 @@
+{
+	"owner": "Joe Karlsson",
+	"cat": {
+		"name": "BMO",
+		"weight": "200"
+	},
+	"db": {
+		"name": "iot-kitty-litter-box",
+		"collection": "litter-box-time-series"
+	},
+	"uri": "--MONBODB DB URI GOES HERE--"
+}

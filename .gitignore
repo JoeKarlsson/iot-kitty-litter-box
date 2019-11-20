@@ -1,3 +1,7 @@
+# project
+src/config.json
+.env
+
 # Logs
 logs
 *.log
