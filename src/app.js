@@ -22,6 +22,7 @@ const OPTIONS = {
 	keepAlive: 300000,
 	ssl: true,
 	sslValidate: false,
+	useUnifiedTopology: true,
 };
 
 const client = new MongoClient(uri, OPTIONS);

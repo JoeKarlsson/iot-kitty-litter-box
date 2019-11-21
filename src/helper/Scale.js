@@ -29,7 +29,10 @@ class Scale {
 			if (!this.baseBoxWeight) {
 				this.calibrate();
 			}
+
 			this.currWeight = parseFloat(data);
+			console.log('this.currWeight :', this.currWeight);
+
 			this.avgWeight = this.calculateNewAvgWeight(
 				this.currWeight,
 				this.recentsWeights
@@ -41,7 +44,7 @@ class Scale {
 		});
 
 		this.process.stderr.on('data', err => {
-			handleError(err);
+			handleError(String(err));
 		});
 
 		this.process.on('close', (code, signal) => {
