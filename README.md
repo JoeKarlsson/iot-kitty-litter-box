@@ -18,6 +18,8 @@
 
 My favorite things in life are cats 🐈, computers 🖥 and crappy ideas 💩, so I decided to combine all three and make an IoT (Internet of Things) litter box using a Raspberry Pi and JavaScript! If you have ever wanted to get build your own IoT project, but didn’t know how to start, then this is the project for you.
 
+This project will help track your feline friend's health by measuring its weight every time it sets foot on the litter tray, and monitors its urination patterns. The equipment can be connected to a companion smartphone app that displays the relevant data in an easy-to-understand graph format, so that cat parents can quickly spot symptoms of unusual weight loss.
+
 Together, we will go through how I setup my IoT Litter Box from start to finish. Including how to setup Node.js on a Raspberry Pi and how to connect sensors to a Raspberry Pi and how to read the sensor inputs with Node.js.
 
 In this demo, we will be getting our hands dirty the Raspberry Pi and Nodejs. We will be writing a simple program in Node.js to turn a LED on and off. Then we will extend this logic to build a simple piece of embedded system that can take a piece of string and emit its morse code.
@@ -49,58 +51,23 @@ In this demo, we will be getting our hands dirty the Raspberry Pi and Nodejs. We
 
 ## Setup Your Project
 
-Download and unpack [Bechdel Test](https://github.com/JoeKarlsson1/bechdel-test). Or alternatively checkout from source:
+Download and unpack [IoT Kitty Litter Box](https://github.com/JoeKarlsson1/iot-kitty-litter-box). Or alternatively checkout from source:
 
-    git clone https://github.com/JoeKarlsson/bechdel-test
+    git clone https://github.com/JoeKarlsson/iot-kitty-litter-box
     cd bechdel-test
 
 Next, inside the project, you need to install the project's various NPM dependencies:
 
     npm install
 
-Start up Docker, and you should now be ready to spin up a development build of your new project:
-
-    npm run start:docker
-
-Navigate to [http://localhost:3000](http://localhost:3000)
-
-### Pre-reqs
-
-- Install [Node.js](https://nodejs.org/en/)
-- Install [MongoDB](https://docs.mongodb.com/manual/installation/) (Create a new database called `bechdelTest` in MongoDD.)
-
-## Setup Your Project
-
-- Sign up for [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). We will be using MongoDB Atlas to save all of our IoT Sensor data.
-
-  - More information about getting started with MongoDB Atlas can be found here: [https://docs.atlas.mongodb.com/getting-started/](https://docs.atlas.mongodb.com/getting-started/)
-
-- Download and unpack [IoT Kitty Litter Box](https://github.com/JoeKarlsson/iot-kitty-litter-box.git). Or alternatively checkout from source:
-
-```bash
-git clone https://github.com/JoeKarlsson/iot-kitty-litter-box.git
-cd iot-kitty-litter-box
-```
-
-- Rename `.env_example` to `.env` and add your MongoDB Atlas URI connection string.
-
-  - Additional information on how to get this can be found here: [https://docs.atlas.mongodb.com/driver-connection/](https://docs.atlas.mongodb.com/driver-connection/).
-
-- Run `source .env`
-
-* Next, inside the project, you need to install the project's various NPM dependencies:
-
-```bash
-npm install
-```
-
-- Quit out of the mongo shell, and you should now be ready to spin up a development build of your new project:
+You should now be ready to spin up a development build of your new project:
 
 ```bash
 npm start
 ```
 
-- Navigate to [http://localhost:3000](http://localhost:3000)
+Navigate to [http://localhost:3000](http://localhost:3000)
+
 
 ## Contributing
 
@@ -109,10 +76,10 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/iot-kitty-litter-bo
 ### Contributing TLDR;
 
 1. Fork it!
-1. Create your feature branch: `git checkout -b my-new-feature`
-1. Commit your changes: `git commit -am 'Add some feature'`
-1. Push to the branch: `git push origin my-new-feature`
-1. Submit a pull request :D
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 
 ### Maintainers
 
@@ -136,6 +103,9 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/iot-kitty-litter-bo
 ## Related Links
 
 - [IoT Cat Litter Box (with ESP32, Arduino IDE, Thingspeak and 3D Printing)(Major inspiration)](https://www.instructables.com/id/IoT-Cat-Litter-Box-with-ESP32-Arduino-IDE-Thingspe/)
+- [IoT Reference Architecture](https://www.mongodb.com/collateral/iot-reference-architecture)
+- [Time Series Data and MongoDB: Best Practices Guide](https://www.mongodb.com/collateral/time-series-best-practices)
+
 
 ### Resources
 

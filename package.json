@@ -31,7 +31,8 @@
 		"lint": "eslint src && npm run lint:md",
 		"lint:fix": "eslint src --fix",
 		"lint:out": "npm run lint -- -f checkstyle -o coverage/checkstyle.xml",
-		"lint:md": "remark ."
+		"lint:md": "remark .",
+		"highlight": "highlight -O rtf test.js | pbcopy"
 	},
 	"author": "Joe Karlsson<joekarlsson1@gmail.com>",
 	"license": "MIT",
