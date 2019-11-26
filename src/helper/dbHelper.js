@@ -1,14 +1,24 @@
 const { cat, owner, db } = require('../config.json');
 const handleError = require('./handleError.js');
 
-const insertTimeSeriesData = (weight, client) => {
+const insertTimeSeriesData = (type, client, weight = null) => {
 	collection = client.db(db.name).collection(db.collection);
-	// perform actions on the collection object
-	const NEW_EVENT = {
-		timestamp_event: new Date(),
-		type: 'cat',
-		weight,
-	};
+
+	let NEW_EVENT = null;
+
+	if (type === 'maintenance') {
+		NEW_EVENT = {
+			timestamp_event: new Date(),
+			type,
+		};
+	} else {
+		NEW_EVENT = {
+			timestamp_event: new Date(),
+			type,
+			weight,
+		};
+	}
+
 	const NEW_DOCUMENT = {
 		timestamp_day: new Date(),
 		type: 'cat_in_box',

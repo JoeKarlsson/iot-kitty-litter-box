@@ -96,7 +96,7 @@ class Scale {
 		// wait n seconds to wait for the cat to settle before taking the weight and logging it in the DB
 		setTimeout(() => {
 			const catsWeight = this.calcCatsWeight();
-			insertTimeSeriesData(catsWeight, this.client);
+			insertTimeSeriesData('cat', this.client, catsWeight);
 		}, 100);
 	}
 }
