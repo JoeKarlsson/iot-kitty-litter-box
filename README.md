@@ -54,7 +54,7 @@ In this demo, we will be getting our hands dirty the Raspberry Pi and Nodejs. We
 Download and unpack [IoT Kitty Litter Box](https://github.com/JoeKarlsson1/iot-kitty-litter-box). Or alternatively checkout from source:
 
     git clone https://github.com/JoeKarlsson/iot-kitty-litter-box
-    cd bechdel-test
+    cd iot-kitty-litter-box
 
 Next, inside the project, you need to install the project's various NPM dependencies:
 
@@ -100,13 +100,13 @@ To use PM2 in combination with IoT Kitty Litter Box, we need to make a simple sh
 
 ```shell
 cd ~
-nano mm.sh
+nano iot-kitty-litter-box.sh
 ```
 
 Add the following lines:
 
 ```shell
-cd ~/IoT Kitty Litter Box
+cd ~/iot-kitty-litter-box
 DISPLAY=:0 npm start
 ```
 
@@ -114,7 +114,7 @@ Save and close, using the commands `CTRL-O` and `CTRL-X`.
 Now make sure the shell script is executable by performing the following command:
 
 ```shell
-chmod +x mm.sh
+chmod +x iot-kitty-litter-box.sh
 ```
 
 You are now ready to the IoT Kitty Litter Box using this script using PM2.
@@ -124,7 +124,7 @@ You are now ready to the IoT Kitty Litter Box using this script using PM2.
 Simply start your mirror with the following command:
 
 ```shell
-pm2 start mm.sh
+pm2 start iot-kitty-litter-box.sh
 ```
 
 You mirror should now boot up and appear on your screen after a few seconds.
@@ -146,25 +146,25 @@ With your IoT Kitty Litter Box running via PM2, you have some handy tools at han
 ##### Restarting your IoT Kitty Litter Box
 
 ```shell
-pm2 restart mm
+pm2 restart iot-kitty-litter-box
 ```
 
 ##### Stopping your IoT Kitty Litter Box
 
 ```shell
-pm2 stop mm
+pm2 stop iot-kitty-litter-box
 ```
 
 ##### Show the IoT Kitty Litter Box logs
 
 ```shell
-pm2 logs mm
+pm2 logs iot-kitty-litter-box
 ```
 
 ##### Show the IoT Kitty Litter Box process information
 
 ```shell
-pm2 show mm
+pm2 show iot-kitty-litter-box
 ```
 
 ## Contributing
