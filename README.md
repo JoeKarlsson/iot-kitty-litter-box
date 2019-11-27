@@ -68,6 +68,104 @@ npm start
 
 Navigate to [http://localhost:3000](http://localhost:3000)
 
+## Auto Starting IoT Kitty Litter Box
+
+The methods below describe ways to automatically start you IoT Kitty Litter Box on boot, and even ways to keep it running in case of a failure.
+
+### Using PM2
+
+PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks. In this case we will use it to keep a shell script running.
+
+#### Install PM2
+
+Install PM2 using NPM:
+
+```
+sudo npm install -g pm2
+```
+
+#### Starting PM2 on Boot
+
+To make sure PM2 can do it's job when (re)booting your operating system, it needs to be started on boot. Luckily, PM2 has a handy helper for this.
+
+```
+pm2 startup
+```
+
+PM2 will now show you a command you need to execute.
+
+#### Make a IoT Kitty Litter Box start script.
+
+To use PM2 in combination with IoT Kitty Litter Box, we need to make a simple shell script. Preferable, we put this script outside the IoT Kitty Litter Box folder to make sure it won't give us any issues if we want to upgrade the mirror.
+
+```shell
+cd ~
+nano mm.sh
+```
+
+Add the following lines:
+
+```shell
+cd ~/IoT Kitty Litter Box
+DISPLAY=:0 npm start
+```
+
+Save and close, using the commands `CTRL-O` and `CTRL-X`.
+Now make sure the shell script is executable by performing the following command:
+
+```shell
+chmod +x mm.sh
+```
+
+You are now ready to the IoT Kitty Litter Box using this script using PM2.
+
+#### Starting your IoT Kitty Litter Box with PM2
+
+Simply start your mirror with the following command:
+
+```shell
+pm2 start mm.sh
+```
+
+You mirror should now boot up and appear on your screen after a few seconds.
+
+#### Enable restarting of the IoT Kitty Litter Box script.
+
+To make sure the IoT Kitty Litter Box restarts after rebooting, you need to save the current state of all scripts running via PM2. To do this, execute the following command
+
+```shell
+pm2 save
+```
+
+And that's all there is! You IoT Kitty Litter Box should now reboot after start, and restart after any failure.
+
+#### Controlling you IoT Kitty Litter Box via PM2.
+
+With your IoT Kitty Litter Box running via PM2, you have some handy tools at hand:
+
+##### Restarting your IoT Kitty Litter Box
+
+```shell
+pm2 restart mm
+```
+
+##### Stopping your IoT Kitty Litter Box
+
+```shell
+pm2 stop mm
+```
+
+##### Show the IoT Kitty Litter Box logs
+
+```shell
+pm2 logs mm
+```
+
+##### Show the IoT Kitty Litter Box process information
+
+```shell
+pm2 show mm
+```
 
 ## Contributing
 
@@ -105,7 +203,6 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/iot-kitty-litter-bo
 - [IoT Cat Litter Box (with ESP32, Arduino IDE, Thingspeak and 3D Printing)(Major inspiration)](https://www.instructables.com/id/IoT-Cat-Litter-Box-with-ESP32-Arduino-IDE-Thingspe/)
 - [IoT Reference Architecture](https://www.mongodb.com/collateral/iot-reference-architecture)
 - [Time Series Data and MongoDB: Best Practices Guide](https://www.mongodb.com/collateral/time-series-best-practices)
-
 
 ### Resources
 

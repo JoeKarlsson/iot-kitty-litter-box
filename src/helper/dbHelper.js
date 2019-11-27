@@ -44,7 +44,7 @@ const insertTimeSeriesData = (type, client, weight = null) => {
 			} else {
 				// if a document has been created in the last 24 hours, push the new event to the events array.
 				return collection
-					.update(
+					.updateOne(
 						{ _id: result._id },
 						{
 							$push: { events: NEW_EVENT },
