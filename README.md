@@ -22,8 +22,6 @@ This project will help track your feline friend's health by measuring its weight
 
 Together, we will go through how I setup my IoT Litter Box from start to finish. Including how to setup Node.js on a Raspberry Pi and how to connect sensors to a Raspberry Pi and how to read the sensor inputs with Node.js.
 
-In this demo, we will be getting our hands dirty the Raspberry Pi and Nodejs. We will be writing a simple program in Node.js to turn a LED on and off. Then we will extend this logic to build a simple piece of embedded system that can take a piece of string and emit its morse code.
-
 ## Materials and Tools
 
 - 1 x Raspberry Pi (We used a Raspberry Pi 3 Model B for this demo)
