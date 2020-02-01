@@ -2,7 +2,7 @@
 	"owner": "Joe Karlsson",
 	"cat": {
 		"name": "BMO",
-		"weight": "1000"
+		"weight": "400"
 	},
 	"db": {
 		"name": "iot-kitty-litter-box",

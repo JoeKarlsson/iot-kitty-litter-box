@@ -43,9 +43,7 @@ board.on('ready', () => {
 		spdt.on('close', () => {
 			console.log('close');
 			//When the box has been closed again, wait 1 min for the box to settle and recalibrate a new base weight
-			setTimeout(function() {
-				scale.calibrate();
-			}, 60000);
+			scale.calibrate();
 		});
 	});
 });
