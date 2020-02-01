@@ -200,7 +200,7 @@ Please read [CONTRIBUTING.md](https://github.com/JoeKarlsson/iot-kitty-litter-bo
 
 ### License
 
-#### [MIT](./LICENSE)
+#### [Apache 2.0](./LICENSE)
 
 ## Related Links
 
