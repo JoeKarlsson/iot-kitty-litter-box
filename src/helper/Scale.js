@@ -90,7 +90,6 @@ class Scale {
 			);
 
 			if (this.isCatPresent(this.avgWeight, this.baseBoxWeight)) {
-				console.log('cat present');
 				this.throttledHandleCatInBoxEvent();
 			}
 		});
@@ -156,7 +155,7 @@ class Scale {
 		setTimeout(() => {
 			const catsWeight = this.calcCatsWeight();
 			console.log('DB call');
-			// insertTimeSeriesData('cat', this.client, catsWeight);
+			insertTimeSeriesData('cat', this.client, catsWeight);
 			this.calibrate();
 		}, 10000);
 	}
