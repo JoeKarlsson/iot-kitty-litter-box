@@ -48,6 +48,7 @@ In this demo, we will be getting our hands dirty the Raspberry Pi and Nodejs. We
 
 - Node js should be installed on your Pi - [Check out this article for tips](https://www.losant.com/blog/how-to-install-nodejs-on-raspberry-pi)
 - NPM should be installed on your Pi
+- Python should also be installed on your box.
 
 ## Setup Your Project
 
@@ -64,13 +65,15 @@ Next, inside the project, you need to install the project's various NPM dependen
 
     npm install
 
+Next, inside the project, you need to install the project's various Python dependencies:
+
+    npm run setup
+
 Rename `src/example_config.json` to `src/config.json` and add your MongoDB Atlas URI connection string.
 
 You should now be ready to spin up a development build of your new project:
 
-```bash
-npm start
-```
+    npm start
 
 Navigate to [http://localhost:3000](http://localhost:3000).
 
@@ -133,7 +136,7 @@ Simply start your mirror with the following command:
 pm2 start iot-kitty-litter-box.sh
 ```
 
-You mirror should now boot up and appear on your screen after a few seconds.
+You box should now boot up and appear on your screen after a few seconds.
 
 #### Enable restarting of the IoT Kitty Litter Box script.
 

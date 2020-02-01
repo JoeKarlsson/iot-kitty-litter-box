@@ -31,7 +31,7 @@ class Scale {
 			}
 
 			this.currWeight = parseFloat(data);
-			console.log('this.currWeight :', this.currWeight);
+			console.log('Weight :', this.currWeight);
 
 			this.avgWeight = this.calculateNewAvgWeight(
 				this.currWeight,
@@ -39,7 +39,7 @@ class Scale {
 			);
 
 			if (this.isCatPresent(this.avgWeight, this.baseBoxWeight)) {
-				this.handleCatInBoxEvent();
+				// this.handleCatInBoxEvent();
 			}
 		});
 
