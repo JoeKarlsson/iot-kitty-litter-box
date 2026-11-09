@@ -16,6 +16,16 @@
 [![bch compliance][bchcompliance]][bchcompliance-url]
 [![first-timers-only](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 
+![Clips of the IoT Kitty Litter Box from 2019: the finished wooden cabinet on angled legs, my black cat sitting on top of it, me fitting the side panel with the wiring, a laptop printing load cell readings as weight is pressed onto the plate, and my cat chewing on the load cells and breadboard](.github/readme/2019-clips.gif)
+
+Clips from 2019, collected for [its page on joekarlsson.com](https://www.joekarlsson.com/work/iot-kitty-litter-box/). The full-quality video is [2019-clips.mp4](.github/readme/2019-clips.mp4).
+
+## Artist statement
+
+My favorite things in life are cats, computers and crappy ideas, so I built an internet-connected litter box. I like that it sits right on the border between completely ridiculous and kinda genius. The post about it ends with "I hereby give you permission to make stupid stuff just for you."
+
+[Read the full statement](https://www.joekarlsson.com/work/iot-kitty-litter-box/).
+
 My favorite things in life are cats 🐈, computers 🖥 and crappy ideas 💩, so I decided to combine all three and make an IoT (Internet of Things) litter box using a Raspberry Pi and JavaScript! If you have ever wanted to get build your own IoT project, but didn’t know how to start, then this is the project for you.
 
 This project will help track your feline friend's health by measuring its weight every time it sets foot on the litter tray, and monitors its urination patterns. The equipment can be connected to a companion smartphone app that displays the relevant data in an easy-to-understand graph format, so that cat parents can quickly spot symptoms of unusual weight loss.
