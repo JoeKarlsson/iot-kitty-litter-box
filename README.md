@@ -2,21 +2,15 @@
 
 [![license][license]][license-url]
 
-A litter box that weighs my cat every time he uses it. This repo has the
-Node.js code that runs on a Raspberry Pi: it reads four load cells through an
-HX711 amplifier and a magnetic door switch, and saves every visit and every
-cleaning to MongoDB Atlas.
-
 ![Clips of the IoT Kitty Litter Box from 2019: the finished wooden cabinet on angled legs, my black cat sitting on top of it, me fitting the side panel with the wiring, a laptop printing load cell readings as weight is pressed onto the plate, and my cat chewing on the load cells and breadboard](.github/readme/2019-clips.gif)
 
-## Artist statement
-
 My favorite things in life are cats, computers and crappy ideas, so I built an
-internet-connected litter box. I like that it sits right on the border between
-completely ridiculous and kinda genius. The post about it ends with "I hereby
-give you permission to make stupid stuff just for you."
+internet-connected litter box. Every time my cat steps in, the box weighs him
+and saves it, so I can follow his health over time without doing anything. It
+sits right on the border between completely ridiculous and kinda genius, and it
+became my Internet of Toilets talk, which I gave at more than 20 events.
 
-[Read the full statement](https://www.joekarlsson.com/work/iot-kitty-litter-box/).
+[Read the full statement](https://www.joekarlsson.com/work/iot-kitty-litter-box/)
 
 ## Hardware
 
