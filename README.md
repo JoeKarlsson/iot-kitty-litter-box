@@ -5,10 +5,9 @@
 ![Clips of the IoT Kitty Litter Box from 2019: the finished wooden cabinet on angled legs, my black cat sitting on top of it, me fitting the side panel with the wiring, a laptop printing load cell readings as weight is pressed onto the plate, and my cat chewing on the load cells and breadboard](.github/readme/2019-clips.gif)
 
 My favorite things in life are cats, computers and crappy ideas, so I built an
-internet-connected litter box. Every time my cat steps in, the box weighs him
-and saves it, so I can follow his health over time without doing anything. It
-sits right on the border between completely ridiculous and kinda genius, and it
-became my Internet of Toilets talk, which I gave at more than 20 events.
+internet-connected litter box. Every time my cat steps in, the box weighs him,
+so I can follow his health over time without doing a thing. It sits right on the
+border between completely ridiculous and kinda genius.
 
 [Read the full statement](https://www.joekarlsson.com/work/iot-kitty-litter-box/)
 
