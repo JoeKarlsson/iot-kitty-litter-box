@@ -58,7 +58,7 @@ class Scale {
 		this.avgWeight = 0;
 		this.recentsWeights = [];
 
-		this.process = spawn('python', ['./hx711py/scale.py'], {
+		this.process = spawn('python3', ['./hx711py/scale.py'], {
 			detached: true,
 		});
 		this.getWeight();

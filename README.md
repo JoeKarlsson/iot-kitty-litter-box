@@ -22,14 +22,14 @@ border between completely ridiculous and kinda genius.
 
 ## Quick start
 
-On the Pi you need Node.js, npm and Python, plus a
-[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) cluster.
+On the Pi you need Node.js, npm and Python 3, plus a
+[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) cluster. Use the 32-bit
+Raspberry Pi OS: `raspi-io`'s GPIO packages only install on 32-bit ARM.
 
 ```bash
 git clone https://github.com/JoeKarlsson/iot-kitty-litter-box.git
 cd iot-kitty-litter-box
 npm install
-npm install mongodb       # used by src/app.js but missing from package.json
 npm run setup             # installs the Python HX711 library in hx711py/
 cp src/example_config.json src/config.json
 npm start                 # runs src/app.js with sudo for GPIO access

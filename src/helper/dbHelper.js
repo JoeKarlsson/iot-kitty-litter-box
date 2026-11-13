@@ -35,12 +35,14 @@ const insertTimeSeriesData = (type, client, weight = null) => {
 		.then(result => {
 			// If document hasn't been created in the last 24 hours, initialize a new time series document for that day
 			if (!result) {
-				return collection.insertOne(NEW_DOCUMENT, (err, r) => {
-					if (err) {
+				return collection
+					.insertOne(NEW_DOCUMENT)
+					.then(() => {
+						console.log(`new event added`);
+					})
+					.catch(err => {
 						handleError(err);
-					}
-					console.log(`new event added`);
-				});
+					});
 			} else {
 				// if a document has been created in the last 24 hours, push the new event to the events array.
 				return collection

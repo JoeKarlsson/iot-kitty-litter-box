@@ -1,10 +1,14 @@
-const MongoClient = require('mongodb').MongoClient;
+const { MongoClient } = require('mongodb');
 const uri =
 	'mongodb+srv://kay:myRealPassword@cluster0.mongodb.net/test?w=majority';
-const client = new MongoClient(uri, { useNewUrlParser: true });
+const client = new MongoClient(uri);
 
-client.connect(err => {
-	const collection = client.db('IoT').collection('kitty-litter');
-	// perform actions on the collection object
-	client.close();
-});
+async function run() {
+	try {
+		const collection = client.db('IoT').collection('kitty-litter');
+		// perform actions on the collection object
+	} finally {
+		await client.close();
+	}
+}
+run().catch(console.error);
